@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1515893893 source:/home/blacknc/workspace/c/hello/main.c
+	<stdio.h>
+	<stdlib.h>
+
