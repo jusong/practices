@@ -1,0 +1,24 @@
+重试中。
+
+--2017-07-04 17:56:36--  (尝试次数：14)  http://www.hi-vps.com/shell/vpn_centos6.sh
+正在连接 www.hi-vps.com (www.hi-vps.com)|104.238.199.221|:80... 失败：连接超时。
+重试中。
+
+--2017-07-04 17:58:53--  (尝试次数：15)  http://www.hi-vps.com/shell/vpn_centos6.sh
+正在连接 www.hi-vps.com (www.hi-vps.com)|104.238.199.221|:80... 失败：连接超时。
+重试中。
+
+--2017-07-04 18:01:11--  (尝试次数：16)  http://www.hi-vps.com/shell/vpn_centos6.sh
+正在连接 www.hi-vps.com (www.hi-vps.com)|104.238.199.221|:80... 失败：连接超时。
+重试中。
+
+--2017-07-04 18:03:28--  (尝试次数：17)  http://www.hi-vps.com/shell/vpn_centos6.sh
+正在连接 www.hi-vps.com (www.hi-vps.com)|104.238.199.221|:80... 失败：连接超时。
+重试中。
+
+--2017-07-04 18:05:45--  (尝试次数：18)  http://www.hi-vps.com/shell/vpn_centos6.sh
+正在连接 www.hi-vps.com (www.hi-vps.com)|104.238.199.221|:80... 失败：连接超时。
+重试中。
+
+--2017-07-04 18:08:02--  (尝试次数：19)  http://www.hi-vps.com/shell/vpn_centos6.sh
+正在连接 www.hi-vps.com (www.hi-vps.com)|104.238.199.221|:80... 失败：无效的参数。

@@ -1,0 +1,152 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CommonServiceClient	CommonService.h	/^  CommonServiceClient(boost::shared_ptr< ::apache::thrift::protocol::TProtocol> iprot, boost::shared_ptr< ::apache::thrift::protocol::TProtocol> oprot) :$/;"	f	class:CommonServiceClient
+CommonServiceClient	CommonService.h	/^  CommonServiceClient(boost::shared_ptr< ::apache::thrift::protocol::TProtocol> prot) :$/;"	f	class:CommonServiceClient
+CommonServiceClient	CommonService.h	/^class CommonServiceClient : virtual public CommonServiceIf {$/;"	c
+CommonServiceHandler	CommonService_server.skeleton.cpp	/^  CommonServiceHandler() {$/;"	f	class:CommonServiceHandler
+CommonServiceHandler	CommonService_server.skeleton.cpp	/^class CommonServiceHandler : virtual public CommonServiceIf {$/;"	c	file:
+CommonServiceIf	CommonService.h	/^class CommonServiceIf {$/;"	c
+CommonServiceIfFactory	CommonService.h	/^class CommonServiceIfFactory {$/;"	c
+CommonServiceIfSingletonFactory	CommonService.h	/^  CommonServiceIfSingletonFactory(const boost::shared_ptr<CommonServiceIf>& iface) : iface_(iface) {}$/;"	f	class:CommonServiceIfSingletonFactory
+CommonServiceIfSingletonFactory	CommonService.h	/^class CommonServiceIfSingletonFactory : virtual public CommonServiceIfFactory {$/;"	c
+CommonServiceMultiface	CommonService.h	/^  CommonServiceMultiface() {}$/;"	f	class:CommonServiceMultiface
+CommonServiceMultiface	CommonService.h	/^  CommonServiceMultiface(std::vector<boost::shared_ptr<CommonServiceIf> >& ifaces) : ifaces_(ifaces) {$/;"	f	class:CommonServiceMultiface
+CommonServiceMultiface	CommonService.h	/^class CommonServiceMultiface : virtual public CommonServiceIf {$/;"	c
+CommonServiceNull	CommonService.h	/^class CommonServiceNull : virtual public CommonServiceIf {$/;"	c
+CommonServiceProcessor	CommonService.h	/^  CommonServiceProcessor(boost::shared_ptr<CommonServiceIf> iface) :$/;"	f	class:CommonServiceProcessor
+CommonServiceProcessor	CommonService.h	/^class CommonServiceProcessor : public ::apache::thrift::TDispatchProcessor {$/;"	c
+CommonServiceProcessorFactory	CommonService.h	/^  CommonServiceProcessorFactory(const ::boost::shared_ptr< CommonServiceIfFactory >& handlerFactory) :$/;"	f	class:CommonServiceProcessorFactory
+CommonServiceProcessorFactory	CommonService.h	/^class CommonServiceProcessorFactory : public ::apache::thrift::TProcessorFactory {$/;"	c
+CommonService_H	CommonService.h	8;"	d
+CommonService_asyncCommonMethod_args	CommonService.h	/^  CommonService_asyncCommonMethod_args() {$/;"	f	class:CommonService_asyncCommonMethod_args
+CommonService_asyncCommonMethod_args	CommonService.h	/^class CommonService_asyncCommonMethod_args {$/;"	c
+CommonService_asyncCommonMethod_pargs	CommonService.h	/^class CommonService_asyncCommonMethod_pargs {$/;"	c
+CommonService_commonMethod_args	CommonService.h	/^  CommonService_commonMethod_args() {$/;"	f	class:CommonService_commonMethod_args
+CommonService_commonMethod_args	CommonService.h	/^class CommonService_commonMethod_args {$/;"	c
+CommonService_commonMethod_pargs	CommonService.h	/^class CommonService_commonMethod_pargs {$/;"	c
+CommonService_commonMethod_presult	CommonService.h	/^class CommonService_commonMethod_presult {$/;"	c
+CommonService_commonMethod_result	CommonService.h	/^  CommonService_commonMethod_result() : success() {$/;"	f	class:CommonService_commonMethod_result
+CommonService_commonMethod_result	CommonService.h	/^class CommonService_commonMethod_result {$/;"	c
+Handler	CommonService.h	/^  typedef CommonServiceIf Handler;$/;"	t	class:CommonServiceIfFactory
+ProcessFunction	CommonService.h	/^  typedef  void (CommonServiceProcessor::*ProcessFunction)(int32_t, ::apache::thrift::protocol::TProtocol*, ::apache::thrift::protocol::TProtocol*, void*);$/;"	t	class:CommonServiceProcessor
+ProcessMap	CommonService.h	/^  typedef std::map<std::string, ProcessFunction> ProcessMap;$/;"	t	class:CommonServiceProcessor
+SData	common_types.h	/^  SData() : __SERVICENAME(), __METHOD(), __PARAM() {$/;"	f	class:SData
+SData	common_types.h	/^class SData {$/;"	c
+_CommonService_asyncCommonMethod_args__isset	CommonService.h	/^  _CommonService_asyncCommonMethod_args__isset() : sdata(false) {}$/;"	f	struct:_CommonService_asyncCommonMethod_args__isset
+_CommonService_asyncCommonMethod_args__isset	CommonService.h	/^typedef struct _CommonService_asyncCommonMethod_args__isset {$/;"	s
+_CommonService_asyncCommonMethod_args__isset	CommonService.h	/^} _CommonService_asyncCommonMethod_args__isset;$/;"	t	typeref:struct:_CommonService_asyncCommonMethod_args__isset
+_CommonService_commonMethod_args__isset	CommonService.h	/^  _CommonService_commonMethod_args__isset() : sdata(false) {}$/;"	f	struct:_CommonService_commonMethod_args__isset
+_CommonService_commonMethod_args__isset	CommonService.h	/^typedef struct _CommonService_commonMethod_args__isset {$/;"	s
+_CommonService_commonMethod_args__isset	CommonService.h	/^} _CommonService_commonMethod_args__isset;$/;"	t	typeref:struct:_CommonService_commonMethod_args__isset
+_CommonService_commonMethod_presult__isset	CommonService.h	/^  _CommonService_commonMethod_presult__isset() : success(false) {}$/;"	f	struct:_CommonService_commonMethod_presult__isset
+_CommonService_commonMethod_presult__isset	CommonService.h	/^typedef struct _CommonService_commonMethod_presult__isset {$/;"	s
+_CommonService_commonMethod_presult__isset	CommonService.h	/^} _CommonService_commonMethod_presult__isset;$/;"	t	typeref:struct:_CommonService_commonMethod_presult__isset
+_CommonService_commonMethod_result__isset	CommonService.h	/^  _CommonService_commonMethod_result__isset() : success(false) {}$/;"	f	struct:_CommonService_commonMethod_result__isset
+_CommonService_commonMethod_result__isset	CommonService.h	/^typedef struct _CommonService_commonMethod_result__isset {$/;"	s
+_CommonService_commonMethod_result__isset	CommonService.h	/^} _CommonService_commonMethod_result__isset;$/;"	t	typeref:struct:_CommonService_commonMethod_result__isset
+_SData__isset	common_types.h	/^  _SData__isset() : __SERVICENAME(false), __METHOD(false), __PARAM(false) {}$/;"	f	struct:_SData__isset
+_SData__isset	common_types.h	/^typedef struct _SData__isset {$/;"	s
+_SData__isset	common_types.h	/^} _SData__isset;$/;"	t	typeref:struct:_SData__isset
+__METHOD	common_types.h	/^  bool __METHOD;$/;"	m	struct:_SData__isset
+__METHOD	common_types.h	/^  std::string __METHOD;$/;"	m	class:SData
+__PARAM	common_types.h	/^  bool __PARAM;$/;"	m	struct:_SData__isset
+__PARAM	common_types.h	/^  std::string __PARAM;$/;"	m	class:SData
+__SERVICENAME	common_types.h	/^  bool __SERVICENAME;$/;"	m	struct:_SData__isset
+__SERVICENAME	common_types.h	/^  std::string __SERVICENAME;$/;"	m	class:SData
+__isset	CommonService.h	/^  _CommonService_asyncCommonMethod_args__isset __isset;$/;"	m	class:CommonService_asyncCommonMethod_args
+__isset	CommonService.h	/^  _CommonService_commonMethod_args__isset __isset;$/;"	m	class:CommonService_commonMethod_args
+__isset	CommonService.h	/^  _CommonService_commonMethod_presult__isset __isset;$/;"	m	class:CommonService_commonMethod_presult
+__isset	CommonService.h	/^  _CommonService_commonMethod_result__isset __isset;$/;"	m	class:CommonService_commonMethod_result
+__isset	common_types.h	/^  _SData__isset __isset;$/;"	m	class:SData
+__set___METHOD	common_types.h	/^  void __set___METHOD(const std::string& val) {$/;"	f	class:SData
+__set___PARAM	common_types.h	/^  void __set___PARAM(const std::string& val) {$/;"	f	class:SData
+__set___SERVICENAME	common_types.h	/^  void __set___SERVICENAME(const std::string& val) {$/;"	f	class:SData
+__set_sdata	CommonService.h	/^  void __set_sdata(const SData& val) {$/;"	f	class:CommonService_asyncCommonMethod_args
+__set_sdata	CommonService.h	/^  void __set_sdata(const SData& val) {$/;"	f	class:CommonService_commonMethod_args
+__set_success	CommonService.h	/^  void __set_success(const std::string& val) {$/;"	f	class:CommonService_commonMethod_result
+add	CommonService.h	/^  void add(boost::shared_ptr<CommonServiceIf> iface) {$/;"	f	class:CommonServiceMultiface
+ascii_fingerprint	common_types.cpp	/^const char* SData::ascii_fingerprint = "F4A50F0EC638C7F66026F9B6678FD89B";$/;"	m	class:SData	file:
+ascii_fingerprint	common_types.h	/^  static const char* ascii_fingerprint; \/\/ = "F4A50F0EC638C7F66026F9B6678FD89B";$/;"	m	class:SData
+asyncCommonMethod	CommonService.cpp	/^void CommonServiceClient::asyncCommonMethod(const SData& sdata)$/;"	f	class:CommonServiceClient
+asyncCommonMethod	CommonService.h	/^  void asyncCommonMethod(const SData& \/* sdata *\/) {$/;"	f	class:CommonServiceNull
+asyncCommonMethod	CommonService.h	/^  void asyncCommonMethod(const SData& sdata) {$/;"	f	class:CommonServiceMultiface
+asyncCommonMethod	CommonService_server.skeleton.cpp	/^  void asyncCommonMethod(const SData& sdata) {$/;"	f	class:CommonServiceHandler
+binary_fingerprint	common_types.cpp	/^const uint8_t SData::binary_fingerprint[16] = {0xF4,0xA5,0x0F,0x0E,0xC6,0x38,0xC7,0xF6,0x60,0x26,0xF9,0xB6,0x67,0x8F,0xD8,0x9B};$/;"	m	class:SData	file:
+binary_fingerprint	common_types.h	/^  static const uint8_t binary_fingerprint[16]; \/\/ = {0xF4,0xA5,0x0F,0x0E,0xC6,0x38,0xC7,0xF6,0x60,0x26,0xF9,0xB6,0x67,0x8F,0xD8,0x9B};$/;"	m	class:SData
+commonConstants	common_constants.cpp	/^commonConstants::commonConstants() {$/;"	f	class:commonConstants
+commonConstants	common_constants.h	/^class commonConstants {$/;"	c
+commonMethod	CommonService.cpp	/^void CommonServiceClient::commonMethod(std::string& _return, const SData& sdata)$/;"	f	class:CommonServiceClient
+commonMethod	CommonService.h	/^  void commonMethod(std::string& \/* _return *\/, const SData& \/* sdata *\/) {$/;"	f	class:CommonServiceNull
+commonMethod	CommonService.h	/^  void commonMethod(std::string& _return, const SData& sdata) {$/;"	f	class:CommonServiceMultiface
+commonMethod	CommonService_server.skeleton.cpp	/^  void commonMethod(std::string& _return, const SData& sdata) {$/;"	f	class:CommonServiceHandler
+common_CONSTANTS_H	common_constants.h	8;"	d
+common_TYPES_H	common_types.h	8;"	d
+dispatchCall	CommonService.cpp	/^bool CommonServiceProcessor::dispatchCall(::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, const std::string& fname, int32_t seqid, void* callContext) {$/;"	f	class:CommonServiceProcessor
+g_common_constants	common_constants.cpp	/^const commonConstants g_common_constants;$/;"	v
+getHandler	CommonService.h	/^  virtual CommonServiceIf* getHandler(const ::apache::thrift::TConnectionInfo&) {$/;"	f	class:CommonServiceIfSingletonFactory
+getInputProtocol	CommonService.h	/^  boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getInputProtocol() {$/;"	f	class:CommonServiceClient
+getOutputProtocol	CommonService.h	/^  boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {$/;"	f	class:CommonServiceClient
+getProcessor	CommonService.cpp	/^::boost::shared_ptr< ::apache::thrift::TProcessor > CommonServiceProcessorFactory::getProcessor(const ::apache::thrift::TConnectionInfo& connInfo) {$/;"	f	class:CommonServiceProcessorFactory
+handlerFactory_	CommonService.h	/^  ::boost::shared_ptr< CommonServiceIfFactory > handlerFactory_;$/;"	m	class:CommonServiceProcessorFactory
+iface_	CommonService.h	/^  boost::shared_ptr<CommonServiceIf> iface_;$/;"	m	class:CommonServiceIfSingletonFactory
+iface_	CommonService.h	/^  boost::shared_ptr<CommonServiceIf> iface_;$/;"	m	class:CommonServiceProcessor
+ifaces_	CommonService.h	/^  std::vector<boost::shared_ptr<CommonServiceIf> > ifaces_;$/;"	m	class:CommonServiceMultiface
+iprot_	CommonService.h	/^  ::apache::thrift::protocol::TProtocol* iprot_;$/;"	m	class:CommonServiceClient
+main	CommonService_server.skeleton.cpp	/^int main(int argc, char **argv) {$/;"	f
+operator !=	CommonService.h	/^  bool operator != (const CommonService_asyncCommonMethod_args &rhs) const {$/;"	f	class:CommonService_asyncCommonMethod_args
+operator !=	CommonService.h	/^  bool operator != (const CommonService_commonMethod_args &rhs) const {$/;"	f	class:CommonService_commonMethod_args
+operator !=	CommonService.h	/^  bool operator != (const CommonService_commonMethod_result &rhs) const {$/;"	f	class:CommonService_commonMethod_result
+operator !=	common_types.h	/^  bool operator != (const SData &rhs) const {$/;"	f	class:SData
+operator ==	CommonService.h	/^  bool operator == (const CommonService_asyncCommonMethod_args & rhs) const$/;"	f	class:CommonService_asyncCommonMethod_args
+operator ==	CommonService.h	/^  bool operator == (const CommonService_commonMethod_args & rhs) const$/;"	f	class:CommonService_commonMethod_args
+operator ==	CommonService.h	/^  bool operator == (const CommonService_commonMethod_result & rhs) const$/;"	f	class:CommonService_commonMethod_result
+operator ==	common_types.h	/^  bool operator == (const SData & rhs) const$/;"	f	class:SData
+oprot_	CommonService.h	/^  ::apache::thrift::protocol::TProtocol* oprot_;$/;"	m	class:CommonServiceClient
+piprot_	CommonService.h	/^  boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;$/;"	m	class:CommonServiceClient
+poprot_	CommonService.h	/^  boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;$/;"	m	class:CommonServiceClient
+processMap_	CommonService.h	/^  ProcessMap processMap_;$/;"	m	class:CommonServiceProcessor
+process_asyncCommonMethod	CommonService.cpp	/^void CommonServiceProcessor::process_asyncCommonMethod(int32_t, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol*, void* callContext)$/;"	f	class:CommonServiceProcessor
+process_commonMethod	CommonService.cpp	/^void CommonServiceProcessor::process_commonMethod(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)$/;"	f	class:CommonServiceProcessor
+read	CommonService.cpp	/^uint32_t CommonService_asyncCommonMethod_args::read(::apache::thrift::protocol::TProtocol* iprot) {$/;"	f	class:CommonService_asyncCommonMethod_args
+read	CommonService.cpp	/^uint32_t CommonService_commonMethod_args::read(::apache::thrift::protocol::TProtocol* iprot) {$/;"	f	class:CommonService_commonMethod_args
+read	CommonService.cpp	/^uint32_t CommonService_commonMethod_presult::read(::apache::thrift::protocol::TProtocol* iprot) {$/;"	f	class:CommonService_commonMethod_presult
+read	CommonService.cpp	/^uint32_t CommonService_commonMethod_result::read(::apache::thrift::protocol::TProtocol* iprot) {$/;"	f	class:CommonService_commonMethod_result
+read	common_types.cpp	/^uint32_t SData::read(::apache::thrift::protocol::TProtocol* iprot) {$/;"	f	class:SData
+recv_commonMethod	CommonService.cpp	/^void CommonServiceClient::recv_commonMethod(std::string& _return)$/;"	f	class:CommonServiceClient
+releaseHandler	CommonService.h	/^  virtual void releaseHandler(CommonServiceIf* \/* handler *\/) {}$/;"	f	class:CommonServiceIfSingletonFactory
+sdata	CommonService.h	/^  SData sdata;$/;"	m	class:CommonService_asyncCommonMethod_args
+sdata	CommonService.h	/^  SData sdata;$/;"	m	class:CommonService_commonMethod_args
+sdata	CommonService.h	/^  bool sdata;$/;"	m	struct:_CommonService_asyncCommonMethod_args__isset
+sdata	CommonService.h	/^  bool sdata;$/;"	m	struct:_CommonService_commonMethod_args__isset
+sdata	CommonService.h	/^  const SData* sdata;$/;"	m	class:CommonService_asyncCommonMethod_pargs
+sdata	CommonService.h	/^  const SData* sdata;$/;"	m	class:CommonService_commonMethod_pargs
+send_asyncCommonMethod	CommonService.cpp	/^void CommonServiceClient::send_asyncCommonMethod(const SData& sdata)$/;"	f	class:CommonServiceClient
+send_commonMethod	CommonService.cpp	/^void CommonServiceClient::send_commonMethod(const SData& sdata)$/;"	f	class:CommonServiceClient
+success	CommonService.h	/^  bool success;$/;"	m	struct:_CommonService_commonMethod_presult__isset
+success	CommonService.h	/^  bool success;$/;"	m	struct:_CommonService_commonMethod_result__isset
+success	CommonService.h	/^  std::string success;$/;"	m	class:CommonService_commonMethod_result
+success	CommonService.h	/^  std::string* success;$/;"	m	class:CommonService_commonMethod_presult
+swap	common_types.cpp	/^void swap(SData &a, SData &b) {$/;"	f
+write	CommonService.cpp	/^uint32_t CommonService_asyncCommonMethod_args::write(::apache::thrift::protocol::TProtocol* oprot) const {$/;"	f	class:CommonService_asyncCommonMethod_args
+write	CommonService.cpp	/^uint32_t CommonService_asyncCommonMethod_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {$/;"	f	class:CommonService_asyncCommonMethod_pargs
+write	CommonService.cpp	/^uint32_t CommonService_commonMethod_args::write(::apache::thrift::protocol::TProtocol* oprot) const {$/;"	f	class:CommonService_commonMethod_args
+write	CommonService.cpp	/^uint32_t CommonService_commonMethod_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {$/;"	f	class:CommonService_commonMethod_pargs
+write	CommonService.cpp	/^uint32_t CommonService_commonMethod_result::write(::apache::thrift::protocol::TProtocol* oprot) const {$/;"	f	class:CommonService_commonMethod_result
+write	common_types.cpp	/^uint32_t SData::write(::apache::thrift::protocol::TProtocol* oprot) const {$/;"	f	class:SData
+~CommonServiceIf	CommonService.h	/^  virtual ~CommonServiceIf() {}$/;"	f	class:CommonServiceIf
+~CommonServiceIfFactory	CommonService.h	/^  virtual ~CommonServiceIfFactory() {}$/;"	f	class:CommonServiceIfFactory
+~CommonServiceIfSingletonFactory	CommonService.h	/^  virtual ~CommonServiceIfSingletonFactory() {}$/;"	f	class:CommonServiceIfSingletonFactory
+~CommonServiceMultiface	CommonService.h	/^  virtual ~CommonServiceMultiface() {}$/;"	f	class:CommonServiceMultiface
+~CommonServiceNull	CommonService.h	/^  virtual ~CommonServiceNull() {}$/;"	f	class:CommonServiceNull
+~CommonServiceProcessor	CommonService.h	/^  virtual ~CommonServiceProcessor() {}$/;"	f	class:CommonServiceProcessor
+~CommonService_asyncCommonMethod_args	CommonService.h	/^  virtual ~CommonService_asyncCommonMethod_args() throw() {}$/;"	f	class:CommonService_asyncCommonMethod_args
+~CommonService_asyncCommonMethod_pargs	CommonService.h	/^  virtual ~CommonService_asyncCommonMethod_pargs() throw() {}$/;"	f	class:CommonService_asyncCommonMethod_pargs
+~CommonService_commonMethod_args	CommonService.h	/^  virtual ~CommonService_commonMethod_args() throw() {}$/;"	f	class:CommonService_commonMethod_args
+~CommonService_commonMethod_pargs	CommonService.h	/^  virtual ~CommonService_commonMethod_pargs() throw() {}$/;"	f	class:CommonService_commonMethod_pargs
+~CommonService_commonMethod_presult	CommonService.h	/^  virtual ~CommonService_commonMethod_presult() throw() {}$/;"	f	class:CommonService_commonMethod_presult
+~CommonService_commonMethod_result	CommonService.h	/^  virtual ~CommonService_commonMethod_result() throw() {}$/;"	f	class:CommonService_commonMethod_result
+~SData	common_types.h	/^  virtual ~SData() throw() {}$/;"	f	class:SData

@@ -1,0 +1,240 @@
+#!/bin/bash
+#
+# Function: 网站系统代码自动部署工具
+# Author: jiafd
+# Date: 2017-05-28
+#
+
+export LANG=zh_CN.UTF-8
+export PATH="/sbin:/usr/sbin:/usr/local/sbin:/bin:/usr/bin:/usr/local/bin"
+
+#apache user/group
+APACHE_USER="apache"
+APACHE_GROUP="apache"
+
+#部署者
+RELEASE_USER="szjj_releaser"
+
+#项目名称
+APP_NAME="szjj"
+
+#分支
+BRANCH="trunk"
+
+#工作目录
+BASE_PATH="/home/szjj_releaser/workspace/"
+WORK_PATH=${BASE_PATH}${APP_NAME}"/"
+
+#网站代码部署根目录
+INSTALL_PATH="/data/"
+WEB_PATH=${INSTALL_PATH}"www/html/"
+#INC_PATH=${INSTALL_PATH}"inc/"
+
+#过滤文件名单
+EXCLUDE_FROM=""
+
+#过滤文件
+EXCLUDE_FILES=""
+
+#安静模式
+QUITE="yes"
+
+umask 002
+
+#打印过程消息，默认不退出
+function msgPrint() {
+	if [ "${QUITE}" != "yes" ]; then
+		echo -e "\e[33m"$1"\e[0m"
+	fi
+	if [ "$2" = 1 ]; then
+		exit
+	fi
+}
+
+#打印错误消息，默认退出
+function errPrint() {
+	echo -e "\e[31m"$1"\e[0m"
+	if [ -z "$2" -o "$2" = 1 ]; then
+		exit
+	fi
+}
+
+#打印成功消息，默认退出
+function sucPrint() {
+	echo -e "\e[32m"$1"\e[0m"
+	if [ -z "$2" -o "$2" = 1 ]; then
+		exit
+	fi
+}
+
+#dos文件格式转换为unix格式
+function dosToUnix() {
+	files=$(find $1 -maxdepth 1 -type f)
+	dos2unix $files > /dev/null 2&>1
+	
+	for dir in $(find $1 -mindepth 1 -maxdepth 1 -type d); do
+		dosToUnix $dir
+	done
+}
+
+#检查目录
+function checkDir() {
+	if [ ! -e "$1" ]; then
+		mkDir $1
+	fi
+}
+
+#创建目录
+function mkDir() {
+	mkdir -p $1
+	if [ "$?" != "0" ]; then
+		errPrint "madir $1 failed!"
+	fi
+}
+
+function getBranchUrl() {
+	if [ "$1" == "trunk" ]; then
+		echo "http://121.199.42.40/svn/fastHand/truck/server/"
+	else
+		echo "http://121.199.42.40/svn/fastHand/branches/server/"$1"/server"
+	fi
+}
+
+##部署代码
+function install() {
+
+	if [ `id -un` != 'root' ]; then
+		errPrint "Supper user required !!!"
+	fi
+
+	# 检查目录是否存在
+	checkDir $WORK_PATH
+	checkDir $INSTALL_PATH
+	checkDir $WEB_PATH
+	#checkDir $INC_PATH
+
+	# 下载代码到本地仓库
+	BRANCH_PATH=${WORK_PATH}${BRANCH}
+	BRANCH_URL=$(getBranchUrl $BRANCH)
+
+	svn co $BRANCH_URL ${BRANCH_PATH} --username jiafd
+	if [ "$?" != "0" ]; then
+		errPrint $BRANCH_PATH" checkout failed !!!"
+	fi
+
+	#设置过滤的文件，这些文件不会被拷贝
+	if [ -z "$EXCLUDE_FROM" ]; then
+		EXCLUDE_FROM=${WORK_PATH}"exclude_file_${BRANCH}.txt"
+	fi
+	echo ".svn" > $EXCLUDE_FROM
+
+	releaser
+
+        # 修改权限	
+	chown -R $RELEASE_USER:$APACHE_GROUP ${WORK_PATH}
+	chown -R $APACHE_USER:$APACHE_GROUP ${INSTALL_PATH}
+	chmod -R 777 ${INSTALL_PATH}
+
+	echo ${APP_NAME}_${BRANCH} > ${BASE_PATH}.install.log
+}
+
+function releaser() {
+	
+	# 更新本地仓库
+	BRANCH_PATH=${WORK_PATH}${BRANCH}
+	svn up ${BRANCH_PATH}
+
+	if [ "$?" != "0" ]; then
+		errPrint $BRANCH_PATH" update failed !!!"
+	fi
+
+	#设置过滤的文件，这些文件不会被拷贝
+	exclude_files=""
+	for exf in ${EXCLUDE_FILES}; do
+		exclude_files="$exclude_files --exclude=$exf"
+	done
+
+	#设置过滤文件名单，写在这个文件内的不会被拷贝
+	if [ -z "$EXCLUDE_FROM" ]; then
+		EXCLUDE_FROM=${WORK_PATH}"exclude_file_${BRANCH}.txt"
+	fi
+
+	## 开始部署代码
+	if [ "${BRANCH}" == 'trunk' ]; then
+		msgPrint "Copying ${BRANCH_PATH} to ${INSTALL_PATH}"
+		rsync -r --exclude-from=${EXCLUDE_FROM} $exclude_files ${BRANCH_PATH}/{rpc,inc} ${INSTALL_PATH}
+		rsync -r --exclude-from=${EXCLUDE_FROM} $exclude_files ${BRANCH_PATH}/web/* ${WEB_PATH}
+	else 
+		msgPrint "Copying ${BRANCH_PATH} to ${INSTALL_PATH}"
+		rsync -r --exclude-from=${EXCLUDE_FROM} $exclude_files ${BRANCH_PATH}/{rpc,inc,web} ${INSTALL_PATH}
+	fi
+}
+
+ARGS=$@
+
+##命令参数处理
+while [ -n "$1" ]
+do
+    case $1 in
+		--exclude-file|-e)
+			#过滤文件
+			EXCLUDE_FILES=$EXCLUDE_FILES" "$2
+			shift
+			;;
+		--exclude-from|-E)
+			#过滤文件名单
+			EXCLUDE_FROM=$2
+			shift
+			;;
+		--branch|-b)
+			#指定部署的分支
+			BRANCH=$2
+			INSTALL_PATH="/data/${BRANCH}/"
+			WEB_PATH=${INSTALL_PATH}"web/"
+			shift
+			;;
+		--verbose|-v)
+			#显示详情
+			QUITE="no"
+			shift
+			;;
+		-x)
+			#显示执行过程
+			set -x
+			;;
+		--help|-h)
+			#帮助
+			script_filename=$0
+			echo "Usage: ${script_filename##*/} [option]"
+            echo "         -e,    --exclude-file	指定忽略文件"
+            echo "         -E,    --exclude-from	指定忽略名单"
+            echo "         -b,    --branch	待部署的分支"
+            echo "         -v,    --verbose	显示详情"
+            echo "         -x				显示执行过程"
+            echo "         -h,    --help		打印帮助"
+			exit
+			;;
+		*)
+			errPrint "Unknown option $1";
+    esac
+    shift
+done
+
+#部署代码
+if [ ! -e "${BASE_PATH}.install.log" ] || [ ! `grep ${APP_NAME}_${BRANCH} ${BASE_PATH}.install.log` ]; then
+	install
+else
+	#检查运行权限
+	if [ $(id -un) != "${RELEASE_USER}" ]; then
+		msgPrint "请输入${RELEASE_USER}的密码"
+		su - ${RELEASE_USER} -c "$0 $ARGS"
+		exit
+	fi
+	releaser
+fi
+
+if [ "$?" = 0 ]; then
+	sucPrint "部署完毕！"
+else
+	errPrint "部署失败！"
+fi

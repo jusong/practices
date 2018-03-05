@@ -1,0 +1,247 @@
+30344:C 02 Aug 19:07:32.542 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+30344:C 02 Aug 19:07:32.542 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=30344, just started
+30344:C 02 Aug 19:07:32.542 # Configuration loaded
+30345:M 02 Aug 19:07:32.545 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+30345:M 02 Aug 19:07:32.545 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+30345:M 02 Aug 19:07:32.545 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 4.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 30345
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+30345:M 02 Aug 19:07:32.546 # Server initialized
+30345:M 02 Aug 19:07:32.547 * DB loaded from disk: 0.000 seconds
+30345:M 02 Aug 19:07:32.547 * Ready to accept connections
+31477:C 02 Aug 19:12:49.219 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+31477:C 02 Aug 19:12:49.220 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=31477, just started
+31477:C 02 Aug 19:12:49.221 # Configuration loaded
+31478:M 02 Aug 19:12:49.222 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+31478:M 02 Aug 19:12:49.222 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+31478:M 02 Aug 19:12:49.222 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+31478:M 02 Aug 19:12:49.222 # Creating Server TCP listening socket 127.0.0.1:6379: bind: Address already in use
+30345:signal-handler (1501672402) Received SIGTERM scheduling shutdown...
+30345:M 02 Aug 19:13:22.937 # User requested shutdown...
+30345:M 02 Aug 19:13:22.937 * Saving the final RDB snapshot before exiting.
+30345:M 02 Aug 19:13:22.981 * DB saved on disk
+30345:M 02 Aug 19:13:22.981 * Removing the pid file.
+30345:M 02 Aug 19:13:22.981 # Redis is now ready to exit, bye bye...
+31682:C 02 Aug 19:13:44.493 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+31682:C 02 Aug 19:13:44.493 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=31682, just started
+31682:C 02 Aug 19:13:44.493 # Configuration loaded
+31683:M 02 Aug 19:13:44.495 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+31683:M 02 Aug 19:13:44.496 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+31683:M 02 Aug 19:13:44.496 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 4.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 31683
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+31683:M 02 Aug 19:13:44.497 # Server initialized
+31683:M 02 Aug 19:13:44.497 * DB loaded from disk: 0.000 seconds
+31683:M 02 Aug 19:13:44.497 * Ready to accept connections
+31683:signal-handler (1501672814) Received SIGTERM scheduling shutdown...
+31683:M 02 Aug 19:20:14.458 # User requested shutdown...
+31683:M 02 Aug 19:20:14.458 * Saving the final RDB snapshot before exiting.
+31683:M 02 Aug 19:20:14.513 * DB saved on disk
+31683:M 02 Aug 19:20:14.513 * Removing the pid file.
+31683:M 02 Aug 19:20:14.513 # Redis is now ready to exit, bye bye...
+638:C 02 Aug 19:20:31.319 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+638:C 02 Aug 19:20:31.320 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=638, just started
+638:C 02 Aug 19:20:31.320 # Configuration loaded
+639:M 02 Aug 19:20:31.323 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+639:M 02 Aug 19:20:31.323 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+639:M 02 Aug 19:20:31.323 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 4.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 639
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+639:M 02 Aug 19:20:31.324 # Server initialized
+639:M 02 Aug 19:20:31.324 * DB loaded from disk: 0.000 seconds
+639:M 02 Aug 19:20:31.324 * Ready to accept connections
+639:signal-handler (1501673550) Received SIGTERM scheduling shutdown...
+639:M 02 Aug 19:32:30.488 # User requested shutdown...
+639:M 02 Aug 19:32:30.488 * Saving the final RDB snapshot before exiting.
+639:M 02 Aug 19:32:30.545 * DB saved on disk
+639:M 02 Aug 19:32:30.545 * Removing the pid file.
+639:M 02 Aug 19:32:30.545 # Redis is now ready to exit, bye bye...
+3378:C 02 Aug 19:32:33.357 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+3378:C 02 Aug 19:32:33.358 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=3378, just started
+3378:C 02 Aug 19:32:33.358 # Configuration loaded
+3379:M 02 Aug 19:32:33.359 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+3379:M 02 Aug 19:32:33.359 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+3379:M 02 Aug 19:32:33.359 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 4.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 3379
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+3379:M 02 Aug 19:32:33.359 # Server initialized
+3379:M 02 Aug 19:32:33.359 * DB loaded from disk: 0.000 seconds
+3379:M 02 Aug 19:32:33.359 * Ready to accept connections
+3379:signal-handler (1501673952) Received SIGTERM scheduling shutdown...
+3379:M 02 Aug 19:39:12.204 # User requested shutdown...
+3379:M 02 Aug 19:39:12.204 * Saving the final RDB snapshot before exiting.
+3379:M 02 Aug 19:39:12.243 * DB saved on disk
+3379:M 02 Aug 19:39:12.243 * Removing the pid file.
+3379:M 02 Aug 19:39:12.243 # Redis is now ready to exit, bye bye...
+4931:C 02 Aug 19:39:13.484 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+4931:C 02 Aug 19:39:13.484 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=4931, just started
+4931:C 02 Aug 19:39:13.484 # Configuration loaded
+4932:M 02 Aug 19:39:13.486 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+4932:M 02 Aug 19:39:13.486 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+4932:M 02 Aug 19:39:13.486 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 4.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 4932
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+4932:M 02 Aug 19:39:13.487 # Server initialized
+4932:M 02 Aug 19:39:13.487 * DB loaded from disk: 0.000 seconds
+4932:M 02 Aug 19:39:13.487 * Ready to accept connections
+4932:M 03 Aug 10:15:46.851 * 1 changes in 900 seconds. Saving...
+4932:M 03 Aug 10:15:46.852 * Background saving started by pid 10738
+10738:C 03 Aug 10:15:46.890 * DB saved on disk
+10738:C 03 Aug 10:15:46.891 * RDB: 0 MB of memory used by copy-on-write
+4932:M 03 Aug 10:15:46.952 * Background saving terminated with success
+4932:M 03 Aug 10:25:10.734 * 10 changes in 300 seconds. Saving...
+4932:M 03 Aug 10:25:10.735 * Background saving started by pid 10970
+10970:C 03 Aug 10:25:10.786 * DB saved on disk
+10970:C 03 Aug 10:25:10.787 * RDB: 1 MB of memory used by copy-on-write
+4932:M 03 Aug 10:25:10.835 * Background saving terminated with success
+4932:M 03 Aug 10:30:11.056 * 10 changes in 300 seconds. Saving...
+4932:M 03 Aug 10:30:11.057 * Background saving started by pid 11042
+11042:C 03 Aug 10:30:11.101 * DB saved on disk
+11042:C 03 Aug 10:30:11.101 * RDB: 0 MB of memory used by copy-on-write
+4932:M 03 Aug 10:30:11.157 * Background saving terminated with success
+4932:M 03 Aug 11:19:57.179 * 1 changes in 900 seconds. Saving...
+4932:M 03 Aug 11:19:57.179 * Background saving started by pid 11528
+11528:C 03 Aug 11:19:57.214 * DB saved on disk
+11528:C 03 Aug 11:19:57.215 * RDB: 0 MB of memory used by copy-on-write
+4932:M 03 Aug 11:19:57.279 * Background saving terminated with success
+4932:M 03 Aug 11:34:58.058 * 1 changes in 900 seconds. Saving...
+4932:M 03 Aug 11:34:58.058 * Background saving started by pid 11766
+11766:C 03 Aug 11:34:58.111 * DB saved on disk
+11766:C 03 Aug 11:34:58.111 * RDB: 0 MB of memory used by copy-on-write
+4932:M 03 Aug 11:34:58.158 * Background saving terminated with success
+4932:M 03 Aug 11:49:59.010 * 1 changes in 900 seconds. Saving...
+4932:M 03 Aug 11:49:59.017 * Background saving started by pid 11935
+11935:C 03 Aug 11:49:59.053 * DB saved on disk
+11935:C 03 Aug 11:49:59.054 * RDB: 0 MB of memory used by copy-on-write
+4932:M 03 Aug 11:49:59.117 * Background saving terminated with success
+4932:signal-handler (1501733300) Received SIGTERM scheduling shutdown...
+4932:M 03 Aug 12:08:20.957 # User requested shutdown...
+4932:M 03 Aug 12:08:20.957 * Saving the final RDB snapshot before exiting.
+4932:M 03 Aug 12:08:22.558 * DB saved on disk
+4932:M 03 Aug 12:08:22.558 * Removing the pid file.
+4932:M 03 Aug 12:08:22.558 # Redis is now ready to exit, bye bye...
+4324:C 03 Aug 13:40:49.196 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+4324:C 03 Aug 13:40:49.211 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=4324, just started
+4324:C 03 Aug 13:40:49.211 # Configuration loaded
+4325:M 03 Aug 13:40:49.212 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+4325:M 03 Aug 13:40:49.212 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+4325:M 03 Aug 13:40:49.212 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 4.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 4325
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+4325:M 03 Aug 13:40:49.214 # Server initialized
+4325:M 03 Aug 13:40:49.222 * DB loaded from disk: 0.008 seconds
+4325:M 03 Aug 13:40:49.222 * Ready to accept connections
+4325:M 03 Aug 13:45:50.055 * 10 changes in 300 seconds. Saving...
+4325:M 03 Aug 13:45:50.056 * Background saving started by pid 4353
+4353:C 03 Aug 13:45:50.137 * DB saved on disk
+4353:C 03 Aug 13:45:50.137 * RDB: 0 MB of memory used by copy-on-write
+4325:M 03 Aug 13:45:50.156 * Background saving terminated with success
+7659:C 03 Aug 17:05:09.720 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+7659:C 03 Aug 17:05:09.720 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=7659, just started
+7659:C 03 Aug 17:05:09.721 # Configuration loaded
+7660:M 03 Aug 17:05:09.722 # You requested maxclients of 10000 requiring at least 10032 max file descriptors.
+7660:M 03 Aug 17:05:09.722 # Server can't set maximum open files to 10032 because of OS error: Operation not permitted.
+7660:M 03 Aug 17:05:09.722 # Current maximum open files is 4096. maxclients has been reduced to 4064 to compensate for low ulimit. If you need higher maxclients increase 'ulimit -n'.
+7660:M 03 Aug 17:05:09.722 # Creating Server TCP listening socket 127.0.0.1:6379: bind: Address already in use
+4325:signal-handler (1502451984) Received SIGTERM scheduling shutdown...
+4325:M 11 Aug 19:46:24.714 # User requested shutdown...
+4325:M 11 Aug 19:46:24.775 * Saving the final RDB snapshot before exiting.
+4325:M 11 Aug 19:46:30.302 * DB saved on disk
+4325:M 11 Aug 19:46:30.302 * Removing the pid file.
+4325:M 11 Aug 19:46:30.302 # Redis is now ready to exit, bye bye...

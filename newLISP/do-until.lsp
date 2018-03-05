@@ -1,0 +1,18 @@
+(define-macro (my-do-until _condition)
+  (let ((_body (cons 'begin (args))))
+;;	(eval (expand (cons 'begin
+;;						(list _body '(while (not _condition) _body)))
+;;	(eval _body)
+;;	(while (not (eval _condition)) (eval _body))))
+	(eval (begin _body (expand '(while (not _condition) _body) '_condition '_body)))))
+
+(setq i 9)
+(my-do-until (< i 1)
+			(setq j 1)
+			(my-do-until (> j i)
+				(print i "x" j "=" (* i j) " ")
+				(inc j))
+			(println "")
+			(dec i))
+(println "")
+(exit)
