@@ -17,3 +17,8 @@ reset($a);
 while (list($k, $v) = each($a)) {
     var_dump($k.' => '.$v);
 }
+
+$str = 'helloworld';
+var_dump((array)$str);
+$str = array('helloworld');
+var_dump((array)$str);

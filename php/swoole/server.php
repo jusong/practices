@@ -21,11 +21,11 @@ class server {
             "max_request" => 10000,
             "dispatch_mode" => 2,
             "debug_mode" => 1,
-            "open_length_check" => 1,
-            "package_length_type" => 'N',
-            "package_max_length" => 102400,
-            'package_length_offset' => 0,
-            'package_body_offset' => 4,
+//            "open_length_check" => 1,
+//            "package_length_type" => 'N',
+//            "package_max_length" => 102400,
+//            'package_length_offset' => 0,
+//            'package_body_offset' => 4,
             'heartbeat_check_interval'  => 5,
             'heartbeat_idle_time' => 10
         ));
@@ -79,16 +79,17 @@ class server {
         echo "worker_id: " . $serv->worker_id . ", fd: " . $fd . ", from_id: " . $from_id . "\n\n";
     }
     public function onReceive(swoole_server $serv, $fd, $from_id, $data) {
-        $dataArray = unpack('N', $data);
-        $msg = substr($data, -$dataArray[1]);
-        $data = json_decode($msg, 1);
-        if ('name' == $data['type']) {
-            echo 'set name: '.$data['data'].PHP_EOL;
-            $serv->table->set($data['data'], array('from_id' => $from_id, 'fd' => $fd));
-        } else {
-            $task_data = array("fd" => $fd, "data" => $data['data']);
-            $serv->task($task_data);
-        }
+//        $dataArray = unpack('N', $data);
+//        $msg = substr($data, -$dataArray[1]);
+//        $data = json_decode($msg, 1);
+//        if ('name' == $data['type']) {
+//            echo 'set name: '.$data['data'].PHP_EOL;
+//            $serv->table->set($data['data'], array('from_id' => $from_id, 'fd' => $fd));
+//        } else {
+//            $task_data = array("fd" => $fd, "data" => $data['data']);
+//            $serv->task($task_data);
+//        }
+        echo $data;
     }
     public function onClose(swoole_server $serv, $fd, $from_id) {
         echo "****** onClose: \n";
