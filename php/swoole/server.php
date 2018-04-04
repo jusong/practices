@@ -14,7 +14,7 @@ class server {
 
         $this->serv = new swoole_server($this->_host, $this->_port);	
         $this->serv->set(array(
-            "worker_num" => 2,
+            "worker_num" => 1,
             "task_worker_num" => 2,
             "task_max_request" => 10000,
             //				"daemonize" => true,
@@ -26,8 +26,8 @@ class server {
 //            "package_max_length" => 102400,
 //            'package_length_offset' => 0,
 //            'package_body_offset' => 4,
-            'heartbeat_check_interval'  => 5,
-            'heartbeat_idle_time' => 10
+//            'heartbeat_check_interval'  => 5,
+            //            'heartbeat_idle_time' => 10
         ));
 
         $this->serv->on("Start", array($this, "onStart"));
@@ -42,11 +42,12 @@ class server {
         $this->serv->on("Finish", array($this, "onFinish"));
 
         $table = new swoole_table(1024);
-        $table->column('fd', swoole_table::TYPE_INT);
-        $table->column('from_id', swoole_table::TYPE_INT);
-        $table->column('data', swoole_table::TYPE_STRING, 64);
+        $table->column('data', swoole_table::TYPE_STRING, 1024);
         $table->create();
         $this->serv->table = $table;
+        $this->serv->dataBuf = array();
+        $this->serv->bufIdx = 0;
+
         $this->serv->start();
     }
 
@@ -75,7 +76,7 @@ class server {
         //echo "\n";
     }
     public function onConnect(swoole_server $serv, $fd, $from_id) {
-        echo "****** onConnect: \n";
+        echo "\n****** onConnect: \n";
         echo "worker_id: " . $serv->worker_id . ", fd: " . $fd . ", from_id: " . $from_id . "\n\n";
     }
     public function onReceive(swoole_server $serv, $fd, $from_id, $data) {
@@ -89,10 +90,33 @@ class server {
 //            $task_data = array("fd" => $fd, "data" => $data['data']);
 //            $serv->task($task_data);
 //        }
-        echo $data;
+        
+        while (($pos = strpos($data, "\r\n")) !== false) {
+
+            $row = $serv->table->get($serv->bufIdx);
+            $dataBuf = $row['data'];
+            if ($dataBuf !== false) {
+                $dataBuf .= substr($data, 0, $pos);
+            } else {
+                $dataBuf = substr($data, 0, $pos);
+            }
+            //$serv->dataBuf[$serv->bufIdx] =  $dataBuf;
+            $serv->table->set($serv->bufIdx, array('data' => $dataBuf));
+            echo 'index: '.$serv->bufIdx.PHP_EOL;
+            echo 'len: '.strlen($dataBuf).PHP_EOL;
+            echo 'data: '.$dataBuf.PHP_EOL.PHP_EOL;
+            $serv->bufIdx++;
+            $data = substr($data, $pos + 2);
+        }
+        //$serv->dataBuf[$serv->bufIdx] = $data;
+        $serv->table->set($serv->bufIdx, array('data' => $data));
+
+//        echo 'len: '.strlen($data).PHP_EOL;
+//        echo 'data: '.$data.PHP_EOL;
+        $serv->close($fd);
     }
     public function onClose(swoole_server $serv, $fd, $from_id) {
-        echo "****** onClose: \n";
+        echo "\n****** onClose: \n";
         echo "worker_id: " . $serv->worker_id . ", fd: " . $fd . ", from_id: " . $from_id . "\n\n";
     }
     public function onTask(swoole_server $serv, $task_id, $from_id, $data) {

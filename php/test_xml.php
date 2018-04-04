@@ -6,16 +6,10 @@
  * 描    述：
  *****************************************************************/
 
-$string = <<<XML
-<document>
-  <cmd>login</cmd>
-  <login>imdonkey</login>
-</document>
-XML;
-
-$string = <<<XML
-<request><header><signed>sdasdfs234234sdf</signed></header><body><order><orderId>10000</orderId><status>NORMAL</status><approveStatus>true</approveStatus><paymentStatus>UNPAY</paymentStatus><waitPaymentTime></waitPaymentTime><credenctStatus>CREDENCE_NO_SEND</credenctStatus><performStatus>USED</performStatus></order></body></request>
-XML;
-var_dump(simplexml_load_string($string));
-$xml = json_decode(json_encode(simplexml_load_string($string)), true);
-var_dump($xml);
+$str = file_get_contents('/tmp/ise.log');
+$pos = strpos($str, ',');
+$xml = substr($str, $pos + 1);
+$res =  simplexml_load_string($xml);
+$attributes = $res->read_sentence->rec_paper->read_sentence->attributes();
+var_dump($attributes);
+var_dump((float)$attributes->total_score);

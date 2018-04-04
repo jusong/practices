@@ -52,7 +52,12 @@ $str = json_decode(base64_decode($str), true);
 var_dump($str);
 $data = base64_decode($str['data']);
 $header = unpack('C3header', $data);
+var_dump(unpack('C3', $data));
 var_dump($header);
 $playloadLen = unpack('Slen', substr($data, 3, 2));
 $data = unpack('Imycardid/Iitemid/Cetype/Iexp', substr($data, 5, $playloadLen['len']));
 var_dump($data);
+
+$str = 'j   iafangdong';
+var_dump(pack('a*C2', $str, 2, 3));
+
